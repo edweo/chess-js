@@ -1,5 +1,7 @@
 # Chess-JS
 
+[Link to ChessJS Application](https://edweo.github.io/chess-js/)
+
 This project is the result of me for the first time trying to learn JS and DOM manipulation.
 
 Features:
