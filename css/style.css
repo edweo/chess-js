@@ -1,0 +1,451 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    user-select: none;
+}
+
+:root {
+    --header-height: 50px;
+    --footer-height: 30px;
+    --main-color: orange;
+    --light-brown: rgb(79, 70, 53);
+    --dark-brown: rgb(32, 22, 11);
+}
+
+html, body {
+    /* height: 100%; */
+    height: calc(100% - var(--header-height));
+}
+
+html {
+    background-color: rgb(32, 22, 11);
+}
+
+#header {
+    background-color: rgb(79, 70, 53);
+    width: 100%;
+    height: var(--header-height);
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    border-bottom: 2px solid orange;
+    gap: 10px;
+    z-index: 10;
+    position: fixed;
+    top: 0;
+}
+
+.header-hidden {
+    display: none !important;
+    position: static !important;
+}
+
+
+#div-logo-text {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
+    padding: 0 10px;
+}
+
+#div-logo-text > p {
+    font-size: 25px;
+    font-weight: bold;
+    color: var(--main-color);
+    user-select: none;
+}
+
+#logo {
+    width: 30px;
+    height: 30px;
+}
+
+#navigation-bar {
+    height: var(--header-height);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    margin-left: auto;
+    margin-right: 2vw;
+}
+
+.header-link {
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    color: var(--main-color);
+    user-select: none;
+}
+
+.header-link:hover {
+    background-color: rgb(19, 16, 8);
+    height: 70%;
+    border-radius: 5px;
+}
+
+#main-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    gap: 30px;
+    /* min-height: calc(100% - (var(--footer-height) + var(--header-height))); */
+    min-height: calc(100% - (var(--footer-height) + var(--header-height)) + var(--header-height) + var(--header-height));
+    margin-top: var(--header-height);
+}
+
+#footer {
+    background-color: rgb(79, 70, 53);
+    width: 100%;
+    height: var(--footer-height);
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 2px solid orange;
+    color: var(--main-color);
+    user-select: none;
+    /* z-index: 10;
+    position: sticky;
+    bottom: 0; */
+}
+
+#hamburger-button {
+    width: 40px;
+    height: 40px;
+    background-color: rgb(34, 31, 23);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border: none;
+    outline: none;
+    position: relative;
+    border-radius: 5px;
+}
+
+.hamburger-line {
+    background-color: orange;
+    width: 30px;
+    height: 5px;
+    border-radius: 5px;
+}
+
+#hamburger-button:hover {
+    background-color: rgb(19, 17, 14);
+}
+
+#hamburger-button:focus {
+    flex-direction: row;
+}
+
+#hamburger-button:focus > .hamburger-line {
+    width: 5px;
+    height: 30px;
+}
+
+#hamburger-button:focus > #line-1 {
+    position: absolute;
+    top: 5px;
+    left: 17px;
+    rotate: -45deg;
+}
+
+#hamburger-button:focus > #line-2 {
+    visibility: hidden;
+}
+
+#hamburger-button:focus > #line-3 {
+    position: absolute;
+    top: 5px;
+    left: 17px;
+    rotate: 45deg;
+}
+
+.game-configure-menu {
+    margin: auto;
+    font-size: 50px;
+    background-color: var(--light-brown);
+    padding: 20px;
+    border-radius: 5px;
+    border-top: solid orange 2px;
+    border-bottom: solid orange 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.game-configure-menu label {
+    color: var(--main-color);
+    font-weight: 600;
+}
+
+.game-configure-menu > label {
+    font-size: 0.7em;
+    color: var(--main-color);
+    font-weight: 600;
+    width: 100%;
+}
+
+.game-configure-menu input {
+    background-color: var(--light-brown);
+    padding: 0.3em 1em;
+    border: solid 2px var(--main-color);
+    border-radius: 5px;
+    user-select: text;
+    width: 100%;
+}
+
+.game-configure-menu input:focus {
+    outline: none;
+}
+
+.game-configure-menu select {
+    background-color: var(--light-brown);
+    border: solid 2px var(--main-color);
+    border-radius: 5px;
+}
+
+.button-menu-game {
+    background-color: var(--main-color);
+
+    color: var(--dark-brown);
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+
+    width: 100%;
+    font-size: 0.5em;
+    font-weight: 600;
+}
+
+.button-menu-game:hover {
+    background-color: rgb(219, 178, 102);
+}
+
+.configure-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+}
+
+.menu-player-section {
+    background-color: var(--dark-brown);
+    border-radius: 5px;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+}
+
+.player-title-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 0.2em;
+}
+
+.piece-img-game-configure {
+    width: 7vh;
+    height: 7vh;
+    margin-bottom: 0.3em;
+}
+
+.timer-img-game-configure {
+    width: 4vh;
+    height: 4vh;
+}
+
+.field-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 0.3em;
+    gap: 0.2em;
+    width: 100%;
+}
+
+.player-label {
+    font-size: 0.8em;
+    color: var(--main-color);
+}
+
+.flag-selection-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 0.3em;
+    width: 100%;
+    gap: 0.2em;
+}
+
+.flag-selection-section > select {
+    width: 100%;
+    padding: 0.3em 1em;
+}
+
+.timer-select {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 0.2em;
+}
+
+.timer-select > label {
+    background-color: red;
+}
+
+.timer-select button {
+    background-color: var(--main-color);
+    color: var(--dark-brown);
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+
+    width: 20%;
+    height: 100%;
+    font-size: 0.5em;
+}
+
+.timer-select button:hover {
+    background-color: rgb(219, 178, 102);
+}
+
+.timer-adjust {
+    background-color: var(--light-brown);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    border-radius: 5px;
+}
+
+.timer-adjust > label {
+    font-size: 0.5em;
+}
+
+@media (max-width: 900px) {
+    #main-section {
+        flex-direction: column;
+    }
+}
+
+/* Re-szie header */
+@media (max-width: 768px) {
+
+    #header {
+        justify-content: center;
+    }
+}
+
+/* Hamburger menu */
+@media (max-width: 468px) {
+
+
+    #header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100vw;
+        gap: 10px;
+    }
+
+    .header-link {
+        width: 95vw;
+    }
+
+    .header-link:hover {
+        background-color: rgb(119, 100, 50);
+        border-radius: 5px;
+        height: 100%;
+    }
+
+    #div-logo-text {
+        
+    }
+
+    #div-logo-text > p {
+        display: block;
+    }
+
+    #hamburger-button {
+        display: flex;
+        margin-right: 10px;
+    }
+
+    .hamburger-line {
+        display: block;
+    }
+
+    #navigation-bar {
+        display: none;
+        background-color: rgb(29, 26, 20);
+        position: absolute;
+        top: 50px;
+        width: 100vw;
+        padding: 5px;
+        height: auto;
+        text-align: center;
+        z-index: 6;
+        border-bottom: 3px solid orange;
+        flex-direction: column;
+        border-radius: 0px 0px 10px 10px;
+    }
+
+    .configure-section {
+        flex-wrap: wrap;
+    }
+
+    .game-configure-menu {
+        width: 95%;
+        margin: 0.5em 0px;
+    }
+
+    .game-configure-menu > label {
+        font-size: 0.4em;
+    }
+
+    .timer-img-game-configure {
+        width: 6vh;
+        height: 6vh;
+    }
+
+    .timer-adjust {
+        height: 6vh;
+    }
+}
+
+/* Hide overflow if there is more content spanning vertically */
+/* @media screen {
+    
+    body {
+        overflow: hidden;
+    }
+} */
